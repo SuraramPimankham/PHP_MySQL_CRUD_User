@@ -19,7 +19,7 @@ $sql = "DELETE FROM users WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     // ถ้าลบข้อมูลสำเร็จ
-    echo "Record deleted successfully";
+    echo "Deleted successfully";
     header('Location: dashboard.php'); // เปลี่ยนเส้นทางไปยังหน้า dashboard.php
     exit(); // หยุดการทำงานของสคริปต์ต่อไป
 } else {

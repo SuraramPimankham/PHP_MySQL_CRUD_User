@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // ถ้าอัปเดตข้อมูลสำเร็จ
-        echo "Record updated successfully";
+        echo "Updated successfully";
         header('Location: dashboard.php'); // เปลี่ยนเส้นทางไปยังหน้า dashboard.php
         exit(); // หยุดการทำงานของสคริปต์ต่อไป
     } else {

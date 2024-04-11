@@ -26,12 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // คำสั่ง SQL เพื่อเพิ่มข้อมูลผู้ใช้ใหม่
+    // คำสั่ง SQL เพื่อเพิ่มข้อมูลใหม่
     $sql = "INSERT INTO users (username, pass, mobile) VALUES ('$username', '$password', '$mobile')";
 
     if ($conn->query($sql) === TRUE) {
         // ถ้าเพิ่มข้อมูลสำเร็จ
-        echo "New record created successfully";
+        echo "Created successfully";
+        header('Location: dashboard.php'); // เปลี่ยนเส้นทางไปยังหน้า dashboard.php
+        exit(); // หยุดการทำงานของสคริปต์ต่อไป
     } else {
         // ถ้าเกิดข้อผิดพลาดในการเพิ่มข้อมูล
         echo "Error: " . $sql . "<br>" . $conn->error;
